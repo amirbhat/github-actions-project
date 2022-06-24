@@ -1,4 +1,4 @@
-name: checking the version for bat
+name: checking the version for bat software
 on: [push]
 jobs:
   check-bats-version:
