@@ -1,6 +1,10 @@
-name: checking the version for bat software
-on: [push]
-jobs:
+name: Deployment
+
+on:
+  push:
+    branches:
+      - test
+jobs:      
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
