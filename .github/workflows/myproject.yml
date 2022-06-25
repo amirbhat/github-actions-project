@@ -17,3 +17,18 @@ jobs:
 
       - name: My first step
         uses: actions/setup-node@v3
+        
+  devploy-to-prod:
+   runs-on: ubuntu-latest
+   needs: check-bats-version
+   environment: prod
+   steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+
+      - name: My first step
+        uses: actions/setup-node@v3
